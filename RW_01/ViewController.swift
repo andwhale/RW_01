@@ -60,10 +60,11 @@ class ViewController: UIViewController {
 			hitButton.isEnabled = false
 		}
 		
-		if currentValue > targetValue {
-			score += currentValue - targetValue
+		var difference = currentValue - targetValue
+		if difference > 0 {
+			score += difference
 		} else {
-			score += targetValue - currentValue
+			score += -difference
 		}
 //		print(score)
 		
