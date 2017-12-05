@@ -68,7 +68,10 @@ class ViewController: UIViewController {
             score += points
         }
 		let alert = UIAlertController(title: changeAlertTitle(), message: "Your result is \(currentValue)\nThe target value is \(targetValue)" + "\nYou scored \(points)", preferredStyle: .alert)
-		let action = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+        let action = UIAlertAction(title: "Dismiss", style: .default, handler: {
+            action in
+            self.startNewRound()
+        })
 		
 //        let alertWin = UIAlertController(title: "You Won!", message: "You hit the Bull's eye - \(currentValue)", preferredStyle: .alert)
 //        let actionWin = UIAlertAction(title: "End Game", style: .default, handler: nil)
@@ -88,7 +91,6 @@ class ViewController: UIViewController {
 		print(score)
 		
 //		print(round)
-		startNewRound()
 	}
     
     
