@@ -60,12 +60,8 @@ class ViewController: UIViewController {
 			hitButton.isEnabled = false
 		}
 		
-		var difference = currentValue - targetValue
-		if difference > 0 {
-			score += difference
-		} else {
-			score += -difference
-		}
+        score += abs(currentValue - targetValue)
+		
 //		print(score)
 		
 		round += 1
