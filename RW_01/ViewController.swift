@@ -23,6 +23,15 @@ class ViewController: UIViewController {
     
 	override func viewDidLoad() {
 		super.viewDidLoad()
+        //slider redesign
+//        let thumbImage = UIImage(named: "xYA3i")! //old variant
+//        let thumbImage = #imageLiteral(resourceName: "xYA3i")
+//        slider.setThumbImage(thumbImage, for: .normal)
+//        let insets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
+//        let trackLeftImage = UIImage(named: "icon-chevron-right-128")!
+//        let trackLeftImage = #imageLiteral(resourceName: "icon-chevron-right-128")
+//        let trackLeftResizable = trackLeftImage.resizableImage(withCapInsets: insets)
+//        slider.setMinimumTrackImage(trackLeftResizable, for: .normal)
 		currentValue = lroundf(slider.value)
 		startNewRound()
 	}
@@ -34,15 +43,6 @@ class ViewController: UIViewController {
 		slider.value = Float(currentValue)
 		updateLabels()
 	}
-    
-    func startNewGame () {
-        round = 0
-        targetValue = Int(arc4random_uniform(100)) + 1
-        currentValue = 50
-        slider.value = Float(currentValue)
-        score = 0
-        updateLabels()
-    }
 	
 	func updateLabels () {
 		targetValueLabel.text = String(targetValue)
@@ -67,6 +67,7 @@ class ViewController: UIViewController {
         }
         return title
     }
+    
 	@IBAction func showAlert() {
 		difference = abs(currentValue - targetValue)
         var points = 100 - difference
@@ -81,7 +82,7 @@ class ViewController: UIViewController {
             action in
             self.startNewRound()
         })
-		
+		//end game condition
 //        let alertWin = UIAlertController(title: "You Won!", message: "You hit the Bull's eye - \(currentValue)", preferredStyle: .alert)
 //        let actionWin = UIAlertAction(title: "End Game", style: .default, handler: nil)
 		
@@ -93,7 +94,6 @@ class ViewController: UIViewController {
 //            alertWin.addAction(actionWin)
 //            hitButton.isEnabled = false
 //        }
-		
 		print(difference)
         print(points)
 		print(score)
@@ -101,11 +101,11 @@ class ViewController: UIViewController {
 	}
     
     @IBAction func resetGame () { //adding an alert w/ Y/N
-        var buttonText = "Yes"
-        buttonText = UIColor.red
         let resetAlert = UIAlertController (title: "Start Over", message: "Are you sure you want to reset your progress and start over?", preferredStyle: .actionSheet)
-        let resetAction = UIAlertAction (title: buttonText, style: .default, handler: { resetAction in
-            self.startNewGame()
+        let resetAction = UIAlertAction (title: "Yes", style: .default, handler: { resetAction in
+            self.round = 0
+            self.score = 0
+            self.startNewRound()
         })
         let resetActionDismiss = UIAlertAction (title: "Cancel", style: .cancel, handler: nil)
         
@@ -116,7 +116,7 @@ class ViewController: UIViewController {
         present (resetAlert, animated: true, completion: nil)
     }
 	
-	@IBAction func sliderMoved(_ slider: UISlider) { //_ is you don't have to use sliderMoved(_ slider: UISlider) => sliderMoved(slider)
+	@IBAction func sliderMoved(_ slider: UISlider) { //_ is you don't have to use sliderMoved(slider: UISlider) => sliderMoved(slider)
 		print("The current value is \(slider.value)")
 		currentValue = Int(slider.value) //lroundf method to round to nearest integer
 	}
