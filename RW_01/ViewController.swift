@@ -34,6 +34,15 @@ class ViewController: UIViewController {
 		slider.value = Float(currentValue)
 		updateLabels()
 	}
+    
+    func startNewGame () {
+        round = 0
+        targetValue = Int(arc4random_uniform(100)) + 1
+        currentValue = 50
+        slider.value = Float(currentValue)
+        score = 0
+        updateLabels()
+    }
 	
 	func updateLabels () {
 		targetValueLabel.text = String(targetValue)
@@ -85,15 +94,27 @@ class ViewController: UIViewController {
 //            hitButton.isEnabled = false
 //        }
 		
-		
 		print(difference)
         print(points)
 		print(score)
-		
-//		print(round)
+        print(round)
 	}
     
-    
+    @IBAction func resetGame () { //adding an alert w/ Y/N
+        var buttonText = "Yes"
+        buttonText = UIColor.red
+        let resetAlert = UIAlertController (title: "Start Over", message: "Are you sure you want to reset your progress and start over?", preferredStyle: .actionSheet)
+        let resetAction = UIAlertAction (title: buttonText, style: .default, handler: { resetAction in
+            self.startNewGame()
+        })
+        let resetActionDismiss = UIAlertAction (title: "Cancel", style: .cancel, handler: nil)
+        
+        resetAlert.addAction(resetAction)
+        resetAlert.addAction(resetActionDismiss)
+        resetAlert.preferredAction = resetAction
+        
+        present (resetAlert, animated: true, completion: nil)
+    }
 	
 	@IBAction func sliderMoved(_ slider: UISlider) { //_ is you don't have to use sliderMoved(_ slider: UISlider) => sliderMoved(slider)
 		print("The current value is \(slider.value)")
