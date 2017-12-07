@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		970638261FD84461006D7A37 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970638251FD84461006D7A37 /* InfoViewController.swift */; };
 		970638281FD851FD006D7A37 /* AboutAuthorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970638271FD851FD006D7A37 /* AboutAuthorVC.swift */; };
-		9706382A1FD85452006D7A37 /* BullsEye.html in Resources */ = {isa = PBXBuildFile; fileRef = 970638291FD85451006D7A37 /* BullsEye.html */; };
+		9720F3491FD9851C0055C879 /* BullsEye.html in Resources */ = {isa = PBXBuildFile; fileRef = 9720F3481FD9851C0055C879 /* BullsEye.html */; };
 		973AA7E91FCF095900FBBA76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973AA7E81FCF095900FBBA76 /* AppDelegate.swift */; };
 		973AA7EB1FCF095900FBBA76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973AA7EA1FCF095900FBBA76 /* ViewController.swift */; };
 		973AA7EE1FCF095900FBBA76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 973AA7EC1FCF095900FBBA76 /* Main.storyboard */; };
@@ -20,7 +20,7 @@
 /* Begin PBXFileReference section */
 		970638251FD84461006D7A37 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		970638271FD851FD006D7A37 /* AboutAuthorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAuthorVC.swift; sourceTree = "<group>"; };
-		970638291FD85451006D7A37 /* BullsEye.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = BullsEye.html; path = "../../../../../Downloads/chapter-06-final/BullsEye/BullsEye.html"; sourceTree = "<group>"; };
+		9720F3481FD9851C0055C879 /* BullsEye.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = BullsEye.html; sourceTree = "<group>"; };
 		973AA7E51FCF095900FBBA76 /* RW_01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RW_01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		973AA7E81FCF095900FBBA76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		973AA7EA1FCF095900FBBA76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,13 +60,13 @@
 		973AA7E71FCF095900FBBA76 /* RW_01 */ = {
 			isa = PBXGroup;
 			children = (
+				9720F3481FD9851C0055C879 /* BullsEye.html */,
 				973AA7E81FCF095900FBBA76 /* AppDelegate.swift */,
 				973AA7EA1FCF095900FBBA76 /* ViewController.swift */,
 				970638251FD84461006D7A37 /* InfoViewController.swift */,
 				970638271FD851FD006D7A37 /* AboutAuthorVC.swift */,
 				973AA7EC1FCF095900FBBA76 /* Main.storyboard */,
 				973AA7EF1FCF095900FBBA76 /* Assets.xcassets */,
-				970638291FD85451006D7A37 /* BullsEye.html */,
 				973AA7F11FCF095900FBBA76 /* LaunchScreen.storyboard */,
 				973AA7F41FCF095900FBBA76 /* Info.plist */,
 			);
@@ -133,7 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				973AA7F31FCF095900FBBA76 /* LaunchScreen.storyboard in Resources */,
-				9706382A1FD85452006D7A37 /* BullsEye.html in Resources */,
+				9720F3491FD9851C0055C879 /* BullsEye.html in Resources */,
 				973AA7F01FCF095900FBBA76 /* Assets.xcassets in Resources */,
 				973AA7EE1FCF095900FBBA76 /* Main.storyboard in Resources */,
 			);
