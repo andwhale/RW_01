@@ -101,7 +101,7 @@ class ViewController: UIViewController {
 	}
     
     @IBAction func resetGame () { //adding an alert w/ Y/N
-        let resetAlert = UIAlertController (title: "Start Over", message: "Are you sure you want to reset your progress and start over?", preferredStyle: .actionSheet)
+        let resetAlert = UIAlertController (title: "Start Over", message: "Are you sure you want to reset your progress and start over?", preferredStyle: .alert)
         let resetAction = UIAlertAction (title: "Yes", style: .default, handler: { resetAction in
             self.round = 0
             self.score = 0
@@ -113,7 +113,7 @@ class ViewController: UIViewController {
         resetAlert.addAction(resetActionDismiss)
         resetAlert.preferredAction = resetAction
         
-        present (resetAlert, animated: true, completion: nil)
+        present(resetAlert, animated: true, completion: nil)
     }
 	
 	@IBAction func sliderMoved(_ slider: UISlider) { //_ is you don't have to use sliderMoved(slider: UISlider) => sliderMoved(slider)
